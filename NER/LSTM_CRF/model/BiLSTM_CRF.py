@@ -25,7 +25,7 @@ class NERBiLSTMCRF(nn.Module):
     def forward(self, x, mask):
         outputs = self.get_lstm2linear(x)
         outputs = outputs * mask.unsqueeze(-1)
-        outputs = self.crf.viterbi_decode(outputs, mask)
+        outputs = self.crf.viterbi_decode(outputs, mask)  # 它返回的是一个 list，里面每个元素是一个长度为 seq_len_i 的 tag 序列（每个样本一个 list）。
         return outputs
 
     def log_likelihood(self, x, tags, mask):
