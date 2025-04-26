@@ -11,7 +11,7 @@ class Config(object):
         self.pos_dim = 32
         self.hidden_dim = 200
         self.epochs = 50
-        self.batch_size = 2
+        self.batch_size = 32
         self.max_len = 70
         self.learning_rate = 1e-3
 

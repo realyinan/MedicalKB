@@ -72,12 +72,8 @@ if __name__ == "__main__":
     # test_data()
     train_dataloader, test_dataloader = get_data_loader()
     for inputs, positionE1, positionE2, labels, _, _, _, in test_dataloader:
-        print(inputs.shape)
-        print(positionE2.shape)
-        print(positionE2.shape)
+        print(inputs)
+        print(positionE1)
+        print(positionE2)
         print(labels)
         break
-
-
-
-

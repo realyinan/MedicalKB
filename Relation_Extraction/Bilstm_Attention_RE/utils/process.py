@@ -9,7 +9,6 @@ with open(conf.rel_data_path, "r", encoding="utf-8") as fr:
         word, idx = line.strip().split(" ")
         if word not in relation2id:
             relation2id[word] = idx
-print(relation2id)
 
 
 def get_text_data(datapath):
