@@ -17,13 +17,23 @@ class MyDataset(Dataset):
         return text, spo_list
 
 
-def test_dataset():
-    ds = MyDataset(conf.train_data_path)
-    print(len(ds))
-    print(ds[0])
-    print(ds[1])
+def get_dataloader():
+    train_dataset = MyDataset(conf.train_data_path)
+    train_dataloader = DataLoader(dataset=train_dataset, shuffle=True, batch_size=conf.batch_size, collate_fn=collate_fn)
+
+    test_dataset = MyDataset(conf.test_data_path)
+    test_dataloader = DataLoader(dataset=test_dataset, shuffle=True, batch_size=conf.batch_size, collate_fn=collate_fn)
+
+    dev_dataset = MyDataset(conf.dev_data_path)
+    dev_dataloader = DataLoader(dataset=dev_dataset, shuffle=True, batch_size=conf.batch_size, collate_fn=collate_fn)
+
+    return train_dataloader, test_dataloader, dev_dataloader
 
 
 if __name__ == "__main__":
-    test_dataset()
+    train_dataloader, test_dataloader, dev_dataloader = get_dataloader()
+    for inputs, labels in train_dataloader:
+        print(inputs)
+        print(labels)
+        break
 
