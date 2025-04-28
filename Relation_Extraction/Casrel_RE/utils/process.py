@@ -2,8 +2,6 @@ from config import *
 import torch
 from random import choice
 from collections import defaultdict
-from rich import print
-
 
 conf = Config()
 
@@ -115,3 +113,9 @@ def collate_fn(datas):
 
     return inputs, labels
 
+
+def convert_score_to_zero_one(tensor):
+    # 以0.5为阈值, 大于0.5的设置为1, 小于0.5的设置为0
+    tensor[tensor >= 0.5] = 1
+    tensor[tensor < 0.5] = 0
+    return tensor
