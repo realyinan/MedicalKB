@@ -12,7 +12,7 @@ class Config(object):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.bert_path = r"C:\Users\19981\Documents\GitHub\MedicalKB\Relation_Extraction\Casrel_RE\model\bert-base-chinese"
         self.num_rel = 18  # 关系的种类数
-        self.batch_size = 4
+        self.batch_size = 8
         self.train_data_path = r"C:\Users\19981\Documents\GitHub\MedicalKB\Relation_Extraction\Casrel_RE\data\train.json"
         self.test_data_path = r"C:\Users\19981\Documents\GitHub\MedicalKB\Relation_Extraction\Casrel_RE\data\test.json"
         self.dev_data_path = r"C:\Users\19981\Documents\GitHub\MedicalKB\Relation_Extraction\Casrel_RE\data\dev.json"
@@ -24,7 +24,7 @@ class Config(object):
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.learning_rate = 1e-5
         self.bert_dim = 768
-        self.epochs = 10
+        self.epochs = 2
 
 
 if __name__ == '__main__':
