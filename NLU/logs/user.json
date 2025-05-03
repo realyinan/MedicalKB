@@ -1,0 +1,15 @@
+{
+    "ask_template": "您问的是疾病 '{Disease}' 的症状表现吗？", 
+    "choice_answer": "'肺寒' 疾病的病症表现一般是这样的：\n恶寒、鼻塞、身痛、流清涕、紧脉\n", 
+    "cql_template": "MATCH(p:疾病)-[r:has_symptom]->(q:症状) WHERE p.name='{Disease}' RETURN q.name", 
+    "deny_response": "人类的语言太难了！！", 
+    "intent_strategy": "clarify", 
+    "replay_answer": "您问的是疾病 '肺寒' 的症状表现吗？", 
+    "reply_template": "'{Disease}' 疾病的病症表现一般是这样的：\n", 
+    "slot_list": [
+        "Disease"
+    ], 
+    "slot_values": {
+        "Disease": "肺寒"
+    }
+}

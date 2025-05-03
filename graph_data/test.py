@@ -1,1 +1,0 @@
-print("{{{name}}}".format(name="John"))

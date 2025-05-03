@@ -1,0 +1,17 @@
+{
+    "O": 0,
+    "B_body": 1,
+    "I_body": 2,
+    "B_department": 3,
+    "I_department": 4,
+    "B_disease": 5,
+    "I_disease": 6,
+    "B_drug": 7,
+    "I_drug": 8,
+    "B_symptom": 9,
+    "I_symptom": 10,
+    "B_check": 11,
+    "I_check": 12,
+    "B_treatment": 13,
+    "I_treatment": 14
+}
