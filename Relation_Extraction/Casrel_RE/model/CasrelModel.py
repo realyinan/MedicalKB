@@ -42,7 +42,7 @@ class Casrel(nn.Module):
         # 将主实体的信息从encoder_output中筛选出来, 筛选出, 1个批次4个样本, 每个样本1个实体, 对应的768维度向量
         sub = torch.matmul(sub_head2tail, encoded_output)  # [4, 1, 768]
         # 平均上述sub信息
-        sub_len = sub_len.unsqueeze(-1)  # [4, 1, 1]
+        sub_len = sub_len.unsqueeze(1)  # [4, 1, 1]
         sub = sub / sub_len
         # 融合原始的bert编码之后的结果
         encoded_text = encoded_output + sub  # [4, 80, 768] + [4, 1, 768] -> [4, 80, 768]

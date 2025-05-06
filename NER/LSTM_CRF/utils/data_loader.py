@@ -45,6 +45,11 @@ def get_data():
 
 
 if __name__ == "__main__":
-    get_data()
+    train_dataloader, dev_dataloader = get_data()
+    for input_ids_padded, labels_padded, attention_mask in train_dataloader:
+        print(input_ids_padded.shape)
+        print(labels_padded.shape)
+        print(attention_mask.shape)
+        break
 
 

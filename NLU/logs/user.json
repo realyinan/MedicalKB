@@ -1,15 +1,18 @@
 {
-    "ask_template": "您问的是疾病 '{Disease}' 的症状表现吗？", 
-    "choice_answer": "'肺寒' 疾病的病症表现一般是这样的：\n恶寒、鼻塞、身痛、流清涕、紧脉\n", 
-    "cql_template": "MATCH(p:疾病)-[r:has_symptom]->(q:症状) WHERE p.name='{Disease}' RETURN q.name", 
-    "deny_response": "人类的语言太难了！！", 
-    "intent_strategy": "clarify", 
-    "replay_answer": "您问的是疾病 '肺寒' 的症状表现吗？", 
-    "reply_template": "'{Disease}' 疾病的病症表现一般是这样的：\n", 
+    "ask_template": "您问的是疾病 '{Disease}' 的治疗方法吗？", 
+    "cql_template": [
+        "MATCH(p:疾病) WHERE p.name='{Disease}' RETURN p.cure_way", 
+        "MATCH(p:疾病)-[r:recommand_drug]->(q) WHERE p.name='{Disease}' RETURN q.name", 
+        "MATCH(p:疾病)-[r:recommand_recipes]->(q) WHERE p.name='{Disease}' RETURN q.name"
+    ], 
+    "deny_response": "没有理解您说的意思哦~", 
+    "intent_strategy": "accept", 
+    "replay_answer": "'湿疹' 疾病的治疗方式、可用的药物、推荐菜肴有：\nNone\n马来酸氯苯那敏片、醋酸氟轻松乳膏、曲咪新乳膏、盐酸异丙嗪片、防风通圣丸、丙酸氟替卡松乳膏、肝素钠乳膏、咪康唑氯倍他索乳膏、曲安奈德益康唑乳膏、肤痒颗粒、创灼膏、哈西奈德乳膏、糠酸莫米松乳膏\n", 
+    "reply_template": "'{Disease}' 疾病的治疗方式、可用的药物、推荐菜肴有：\n", 
     "slot_list": [
         "Disease"
     ], 
     "slot_values": {
-        "Disease": "肺寒"
+        "Disease": "湿疹"
     }
 }

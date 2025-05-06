@@ -15,7 +15,7 @@ def get_text_data(datapath):
     datas = []  # 数据
     labels = []  # 标签
     positionE1 = []  # 存储相对于实体一的位置信息
-    positionE2 = []  # 存储相对于实体一的位置信息
+    positionE2 = []  # 存储相对于实体二的位置信息
     entities = []  # 存储实体信息
     rel2count = {key: 0 for key, value in relation2id.items()}  # 统计不同类别出现的次数
     with open(datapath, "r", encoding="utf-8") as f:

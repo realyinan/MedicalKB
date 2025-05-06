@@ -1,6 +1,6 @@
-from bilstm_atten import *
-from data_loader import *
-from process import *
+from model.bilstm_atten import *
+from utils.data_loader import *
+from utils.process import *
 import torch
 import torch.nn as nn
 import torch.optim as optim

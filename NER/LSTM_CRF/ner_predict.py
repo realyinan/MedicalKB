@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from BiLSTM_CRF import *
-from BiLSTM import *
-from data_loader import *
+from model.BiLSTM_CRF import *
+from model.BiLSTM import *
+from utils.data_loader import *
 
 models = {
     "BiLSTM": NERBiLSTM, "BiLSTM_CRF": NERBiLSTMCRF

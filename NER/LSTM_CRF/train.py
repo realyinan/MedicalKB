@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from BiLSTM import *
-from BiLSTM_CRF import *
-from data_loader import *
+from model.BiLSTM import *
+from model.BiLSTM_CRF import *
+from utils.data_loader import *
 from sklearn.metrics import precision_score, recall_score, f1_score, classification_report
 from config import *
 from tqdm import tqdm

@@ -9,7 +9,7 @@ class Config(object):
         self.vocab_path = r"C:\Users\19981\Documents\GitHub\MedicalKB\NER\LSTM_CRF\vocab\vocab.txt"
         self.embedding_dim = 300
         self.epochs = 10
-        self.batch_size = 8
+        self.batch_size = 4
         self.hidden_dim = 256
         self.lr = 2e-3
         self.dropout = 0.2
